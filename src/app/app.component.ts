@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'fritziswelt';
+  public showNavbar=false;
+  public toggleNavbar() {
+    this.showNavbar=!this.showNavbar;
+  }
 }
