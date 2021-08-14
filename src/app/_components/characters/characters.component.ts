@@ -7,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharactersComponent  {
   public characters = [
-    {name: "Fritzi der Frosch",description: "xxx", image: "fritzi"},
-    {name: "Schnecke Schnickelschnak",description: "xxx", image: "schnecke"},
-    {name: "Lilly die Libelle",description: "xxx", image: "lilly"},
-    {name: "Igor der Igel",description: "xxx", image: "igor"},
-    {name: "Gisela das Glühwürmchen",description: "xxx", image: "gluehwuermchen"},
-    {name: "Madame Scharmilla",description: "xxx", image: "schmetterling"},
-    {name: "Schorsch und Schantal",description: "xxx", image: "storch"},
-    {name: "Amadeus",description: "xxx", image: "amadeus"},
+    {name: "Fritzi der Frosch", image: "fritzi"},
+    {name: "Schnecke Schnickelschnak", image: "schnecke"},
+    {name: "Lilly die Libelle", image: "lilly"},
+    {name: "Igor der Igel", image: "igor"},
+    {name: "Gisela das Glühwürmchen", image: "gluehwuermchen"},
+    {name: "Madame Scharmilla", image: "schmetterling"},
+    {name: "Schorsch und Schantal", image: "storch"},
+    {name: "Amadeus", image: "amadeus"},
   ]
 }

@@ -11,12 +11,22 @@ export class QuizComponent {
     { title: "Wer ist der größte Tollpatsch des Seerosenteichs?", answers: ["Igor der Igel", "Tausendfüßler Thade", "Amadeus die Ameise", "Schantal und Schorsch"], correctAnswer: 0 },
     { title: "Was isst der Tausendfüßler Thade am liebsten?", answers: ["Bananen", "Äpfel", "Orangen", "Schokolade"], correctAnswer: 3 },
   ]
-  public errorCount = 0 
-  
+  public errorCount = 0
+
   public currentQuestionIndex = 0;
   public selectedAnswerIndex?: string;
   public showResults = false;
   public showWrongAnswerAlert = false;
+
+  constructor() {
+    this.questions = this.shuffle(this.questions).map((question) => {
+      const correctAnswer = question.answers[question.correctAnswer];
+      question.answers = this.shuffle(question.answers);
+      question.correctAnswer = question.answers.findIndex((a: any) => a == correctAnswer)
+      return question
+    });
+  }
+
   public checkAnswer() {
     if (this.selectedAnswerIndex === undefined) {
       return;
@@ -30,12 +40,20 @@ export class QuizComponent {
       }
     } else {
       this.showWrongAnswerAlert = true
-      this.errorCount = this.errorCount +1
+      this.errorCount = this.errorCount + 1
     }
   }
 
   public startOver() {
     location.reload();
+  }
+
+  private shuffle(a: any[]) {
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
   }
 }
 
