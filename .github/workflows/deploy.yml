@@ -21,7 +21,7 @@ jobs:
       run: |
          npm install -g @angular/cli
          npm install
-         ng build --prod
+         ng build --base-href /FritzisWelt/
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@4.1.0
       with:
