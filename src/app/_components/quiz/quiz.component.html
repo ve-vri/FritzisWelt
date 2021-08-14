@@ -18,7 +18,7 @@
     <div *ngIf="showResults">
         <div class="alert alert-success m-4 text-center">
             <h3>Fertig!</h3>
-            <p>Du hast das Quiz erfolgreich beendet!</p>
+            <p>Du hast das Quiz mit {{errorCount}} Fehler{{errorCount == 1 ? "" : "n"}} beendet!</p>
             <button class="btn btn-outline-dark" (click)="startOver()">Nochmal</button>
         </div>
     </div>

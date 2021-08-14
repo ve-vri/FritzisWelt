@@ -11,6 +11,8 @@ export class QuizComponent {
     { title: "Wer ist der größte Tollpatsch des Seerosenteichs?", answers: ["Igor der Igel", "Tausendfüßler Thade", "Amadeus die Ameise", "Schantal und Schorsch"], correctAnswer: 0 },
     { title: "Was isst der Tausendfüßler Thade am liebsten?", answers: ["Bananen", "Äpfel", "Orangen", "Schokolade"], correctAnswer: 3 },
   ]
+  public errorCount = 0 
+  
   public currentQuestionIndex = 0;
   public selectedAnswerIndex?: string;
   public showResults = false;
@@ -28,6 +30,7 @@ export class QuizComponent {
       }
     } else {
       this.showWrongAnswerAlert = true
+      this.errorCount = this.errorCount +1
     }
   }
 
